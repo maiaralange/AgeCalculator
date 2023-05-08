@@ -1,22 +1,26 @@
-import { ChangeEvent } from 'react';
 import { Container, Input, Title } from './styles';
 
 interface DateInputProps {
   label: string;
-  update: (value: number) => void;
-  value: number;
+  placeholder: string;
+  update: (value: string) => void;
+  value: string;
 }
 
-export function DateInput({ label, update, value }: DateInputProps) {
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    const value = Number(event.target.value);
-    update(value);
-  }
-
+export function DateInput({
+  label,
+  placeholder,
+  update,
+  value
+}: DateInputProps) {
   return (
     <Container>
       <Title>{label}</Title>
-      <Input onChange={handleChange} value={value} />
+      <Input
+        onChange={(event) => update(event.target.value)}
+        value={value}
+        placeholder={placeholder}
+      />
     </Container>
   );
 }
