@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Title = styled.h5`
   color: var(--text-body);
+  letter-spacing: 0.1rem;
 `;
 
 export const Input = styled.input`
