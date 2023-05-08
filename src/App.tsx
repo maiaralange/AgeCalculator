@@ -1,13 +1,13 @@
 import { Dashboard } from './components/Dashboard';
-import { BirthdayProvider } from './context/useBirthday';
+import { AgeProvider } from './context/useAge';
 import { GlobalStyle } from './styles/global';
 
 function App() {
   return (
-    <BirthdayProvider>
+    <AgeProvider>
       <GlobalStyle />
       <Dashboard />
-    </BirthdayProvider>
+    </AgeProvider>
   );
 }
 
