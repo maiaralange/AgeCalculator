@@ -1,6 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --background: hsl(0, 0%, 94%);
+    --purple: hsl(259, 100%, 65%);
+    --text-title: hsl(0, 0%, 8%);
+    --text-body: hsl(0, 1%, 44%);
+    --shadow: hsl(0, 0%, 86%);
+    --shape: hsl(0, 0%, 100%);
+  }
+
   * {
     margin: 0;
     padding: 0;
