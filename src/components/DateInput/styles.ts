@@ -7,13 +7,21 @@ export const Container = styled.div`
   gap: 0.25rem;
 `;
 
-export const Title = styled.h4`
+export const Title = styled.h5`
   color: var(--text-body);
 `;
 
 export const Input = styled.input`
   border: 0.1rem solid var(--shadow);
   border-radius: 0.25rem;
-  height: 3rem;
+  height: 4rem;
   width: 10rem;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 2rem;
+
+  &:focus {
+    outline: none;
+    border-color: var(--purple);
+  }
 `;

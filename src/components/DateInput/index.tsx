@@ -1,9 +1,13 @@
 import { Container, Input, Title } from './styles';
 
-export function DateInput() {
+interface DateInputProps {
+  label: string;
+}
+
+export function DateInput({ label }: DateInputProps) {
   return (
     <Container>
-      <Title></Title>
+      <Title>{label}</Title>
       <Input></Input>
     </Container>
   );
