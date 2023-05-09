@@ -10,6 +10,16 @@ This project calculates the age (years, months, days) based on the date provided
 - If the date exists (not Feb 30th for example)
 - If required fields were provided
 
+## Technologies
+
+This project was built with the following technologies:
+
+- <img src="https://skillicons.dev/icons?i=ts" width="15" height="15"/> TypeScript
+- <img src="https://skillicons.dev/icons?i=react" width="15" height="15"/> React
+- <img src="https://skillicons.dev/icons?i=vite" width="15" height="15"/> Vite
+- <img src="https://skillicons.dev/icons?i=styledcomponents" width="15" height="15"/> Styled components
+- **react-hook-forms** and **zod** for validation
+
 ## Installation
 
 To use this project, simply clone or download the repository to your local machine and run the following commands:
@@ -42,16 +52,6 @@ The input is validated for the following conditions:
 - If the date exists: The date provided must exist. For example, February 30th is not a valid date.
 
 ![](./src/assets/invalid-date.png)
-
-## Technologies
-
-This project was built with the following technologies:
-
-- <img src="https://skillicons.dev/icons?i=ts" width="15" height="15"/> TypeScript
-- <img src="https://skillicons.dev/icons?i=react" width="15" height="15"/> React
-- <img src="https://skillicons.dev/icons?i=vite" width="15" height="15"/> Vite
-- <img src="https://skillicons.dev/icons?i=styledcomponents" width="15" height="15"/> Styled components
-- **react-hook-forms** and **zod** for validation
 
 ## Example
 
