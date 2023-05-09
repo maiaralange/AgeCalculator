@@ -4,11 +4,12 @@ import { Container, ErrorMessage, Input, Title } from './styles';
 
 export interface DateInputProps extends ComponentProps<typeof Input> {
   dateType: DateType;
+  hasError?: boolean;
   errorMessage?: string;
 }
 
 export const DateInput = forwardRef<ElementRef<typeof Input>, DateInputProps>(
-  ({ dateType, errorMessage, ...props }, ref) => {
+  ({ dateType, hasError, errorMessage, ...props }, ref) => {
     const map: {
       [key in DateType]: {
         placeholder: string;
@@ -21,10 +22,10 @@ export const DateInput = forwardRef<ElementRef<typeof Input>, DateInputProps>(
     };
 
     return (
-      <Container>
+      <Container error={String(hasError)}>
         <Title>{map[dateType].label}</Title>
         <Input ref={ref} placeholder={map[dateType].placeholder} {...props} />
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        {hasError && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </Container>
     );
   }

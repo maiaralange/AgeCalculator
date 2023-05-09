@@ -1,10 +1,26 @@
 import { styled } from 'styled-components';
 
-export const Container = styled.div`
+interface ErrorProps {
+  error?: string;
+}
+
+export const Container = styled.div<ErrorProps>`
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 0.25rem;
+
+  ${(props) =>
+    props.error == 'true' &&
+    `
+    h5 {
+      color: var(--red)
+    }
+
+    input {
+      border: 0.1rem solid var(--red)
+    }
+  `}
 `;
 
 export const Title = styled.h5`
@@ -28,7 +44,7 @@ export const Input = styled.input`
 `;
 
 export const ErrorMessage = styled.p`
-  padding-top: 0.1rem;
+  margin-top: 0.1rem;
   color: var(--red);
   font-style: italic;
   font-size: 0.75rem;

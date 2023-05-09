@@ -1,5 +1,7 @@
 import { ReactNode, createContext, useContext, useState } from 'react';
 
+export const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 export interface Age {
   day: string;
   month: string;
@@ -33,7 +35,6 @@ export function AgeProvider({ children }: AgeProviderProps) {
     birthMonth: number,
     birthYear: number
   ) {
-    const daysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     const today = new Date();
     let day = today.getDate(),
       month = today.getMonth() + 1,
