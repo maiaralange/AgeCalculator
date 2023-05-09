@@ -49,7 +49,8 @@ This project was built with the following technologies:
 
 - <img src="https://skillicons.dev/icons?i=ts" width="15" height="15"/> TypeScript
 - <img src="https://skillicons.dev/icons?i=react" width="15" height="15"/> React
-- <img src="https://skillicons.dev/icons?i=vite" width="15" height="15"/> vite
+- <img src="https://skillicons.dev/icons?i=vite" width="15" height="15"/> Vite
+- <img src="https://skillicons.dev/icons?i=styledcomponents" width="15" height="15"/> Styled components
 - **react-hook-forms** and **zod** for validation
 
 ## Example
