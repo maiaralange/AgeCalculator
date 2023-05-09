@@ -15,6 +15,7 @@ interface AgeContextData {
     birthMonth: number,
     birthYear: number
   ) => void;
+  clearAge: () => void;
 }
 
 interface AgeProviderProps {
@@ -29,6 +30,14 @@ export function AgeProvider({ children }: AgeProviderProps) {
     month: '--',
     year: '--'
   });
+
+  function clearAge() {
+    setAge({
+      day: '--',
+      month: '--',
+      year: '--'
+    });
+  }
 
   function calculateAge(
     birthDate: number,
@@ -58,7 +67,7 @@ export function AgeProvider({ children }: AgeProviderProps) {
   }
 
   return (
-    <AgeContext.Provider value={{ age, calculateAge }}>
+    <AgeContext.Provider value={{ age, calculateAge, clearAge }}>
       {children}
     </AgeContext.Provider>
   );

@@ -70,14 +70,14 @@ export function Header() {
   } = useForm<FormInput & { date: string }>({
     resolver: zodResolver(birthdaySchema)
   });
-  const { calculateAge } = useAge();
+  const { calculateAge, clearAge } = useAge();
 
   function submit(data: FormInput) {
     calculateAge(data.day, data.month, data.year);
   }
 
   return (
-    <Container onSubmit={handleSubmit(submit)}>
+    <Container onSubmit={handleSubmit(submit, clearAge)}>
       <Form>
         <DateInput
           dateType={DateType.Day}
