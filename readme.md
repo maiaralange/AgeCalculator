@@ -47,10 +47,10 @@ The input is validated for the following conditions:
 
 This project was built with the following technologies:
 
-- TypeScript
-- React
-- react-hook-forms and zod
-- vite
+- <img src="https://skillicons.dev/icons?i=ts" width="15" height="15"/> TypeScript
+- <img src="https://skillicons.dev/icons?i=react" width="15" height="15"/> React
+- <img src="https://skillicons.dev/icons?i=vite" width="15" height="15"/> vite
+- **react-hook-forms** and **zod** for validation
 
 ## Example
 
