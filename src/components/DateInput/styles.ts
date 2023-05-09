@@ -26,3 +26,10 @@ export const Input = styled.input`
     border-color: var(--purple);
   }
 `;
+
+export const ErrorMessage = styled.p`
+  padding-top: 0.1rem;
+  color: var(--red);
+  font-style: italic;
+  font-size: 0.75rem;
+`;

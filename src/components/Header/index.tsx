@@ -1,35 +1,72 @@
-import { FormEvent, useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import submitImg from '../../assets/icon-arrow.svg';
 import { useAge } from '../../context/useAge';
 import { DateInput } from '../DateInput';
 import { Container, Form, Line, Submit, SubmitButton } from './styles';
 
-export function Header() {
-  const { calculateAge } = useAge();
-  const [day, setDay] = useState('');
-  const [month, setMonth] = useState('');
-  const [year, setYear] = useState('');
+export enum DateType {
+  Day,
+  Month,
+  Year
+}
 
-  function handleSubmit(event: FormEvent) {
-    event.preventDefault();
-    calculateAge(Number(day), Number(month), Number(year));
+interface FormInput {
+  day: number;
+  month: number;
+  year: number;
+}
+
+const birthdaySchema = z.object({
+  day: z.coerce
+    .number()
+    .int()
+    .positive({ message: 'Must be a valid day' })
+    .min(1, { message: 'Must be a valid day' })
+    .max(31, { message: 'Must be a valid day' }),
+  month: z.coerce
+    .number()
+    .int()
+    .positive({ message: 'Must be a valid month' })
+    .min(1, { message: 'Must be a valid month' })
+    .max(12, { message: 'Must be a valid month' }),
+  year: z.coerce
+    .number()
+    .int()
+    .positive({ message: 'Must be a valid year' })
+    .max(new Date().getFullYear(), { message: 'Must be a valid year' })
+});
+
+export function Header() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<FormInput>({ resolver: zodResolver(birthdaySchema) });
+  const { calculateAge } = useAge();
+
+  function submit(data: FormInput) {
+    calculateAge(data.day, data.month, data.year);
   }
 
   return (
-    <Container onSubmit={handleSubmit}>
+    <Container onSubmit={handleSubmit(submit)}>
       <Form>
-        <DateInput label="DAY" placeholder="DD" value={day} update={setDay} />
         <DateInput
-          label="MONTH"
-          placeholder="MM"
-          value={month}
-          update={setMonth}
+          dateType={DateType.Day}
+          errorMessage={errors.day?.message}
+          {...register('day')}
         />
         <DateInput
-          label="YEAR"
-          placeholder="YYYY"
-          value={year}
-          update={setYear}
+          dateType={DateType.Month}
+          errorMessage={errors.month?.message}
+          {...register('month')}
+        />
+        <DateInput
+          dateType={DateType.Year}
+          errorMessage={errors.year?.message}
+          {...register('year')}
         />
       </Form>
       <Submit>

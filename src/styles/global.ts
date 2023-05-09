@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     --background: hsl(0, 0%, 94%);
     --purple: hsl(259, 100%, 65%);
     --black: hsl(0, 0%, 8%);
+    --red: hsl(0, 100%, 67%);
     --text-body: hsl(0, 1%, 44%);
     --shadow: hsl(0, 0%, 86%);
     --shape: hsl(0, 0%, 100%);
