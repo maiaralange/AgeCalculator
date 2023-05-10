@@ -63,8 +63,8 @@ This app is responsive and can be used on mobile and tablet devices.
 
 ### iPad/Tablet
 
-![](./src/assets/ipad.png)
+<img src="./src/assets/ipad.png" width="50%" height="50%"/>
 
 ### Mobile
 
-![](./src/assets/mobile.png)
+<img src="./src/assets/mobile.png" width="50%" height="50%"/>
