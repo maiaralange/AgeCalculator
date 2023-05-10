@@ -10,6 +10,12 @@ export const Form = styled.div`
   padding: 3rem 0 0 3rem;
   gap: 1.5rem;
 
+  @media (max-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 0.5rem;
+  }
+
   @media (max-width: 768px) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -23,6 +29,11 @@ export const Submit = styled.div`
   justify-content: flex-end;
   margin: 0.5rem 3rem 0.5rem 3rem;
   position: relative;
+
+  @media (max-width: 1024px) {
+    margin: 2rem;
+    justify-content: center;
+  }
 
   @media (max-width: 768px) {
     margin: 1rem;
@@ -57,6 +68,15 @@ export const SubmitButton = styled.button`
 
   &:active {
     background-color: var(--black);
+  }
+
+  @media (max-width: 1024px) {
+    height: 4rem;
+    width: 4rem;
+
+    img {
+      height: 2rem;
+    }
   }
 
   @media (max-width: 768px) {
