@@ -43,7 +43,7 @@ export const Input = styled.input`
   }
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 100%;
     padding: 1rem;
     font-size: 1.5rem;
   }

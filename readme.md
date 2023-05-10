@@ -56,3 +56,15 @@ The input is validated for the following conditions:
 ## Example
 
 Suppose the birth date is May 9th, 2000 and current date is May 9th 2023. The user will input "09" in the day field, "05" in the month field, and "2000" in the year field. Then, click the "Calculate Age" button. The result will be displayed as "23 years, 0 months, 0 days".
+
+## Responsiveness
+
+This app is responsive and can be used on mobile and tablet devices.
+
+### iPad/Tablet
+
+![](./src/assets/ipad.png)
+
+### Mobile
+
+![](./src/assets/mobile.png)
