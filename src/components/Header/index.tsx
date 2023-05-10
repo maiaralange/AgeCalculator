@@ -26,14 +26,17 @@ const birthdaySchema = z
   .object({
     day: z.coerce
       .number()
+      .int({ message: 'Must be a valid day' })
       .min(1, { message: 'Must be a valid day' })
       .max(31, { message: 'Must be a valid day' }),
     month: z.coerce
       .number()
+      .int({ message: 'Must be a valid month' })
       .min(1, { message: 'Must be a valid month' })
       .max(12, { message: 'Must be a valid month' }),
     year: z.coerce
       .number()
+      .int({ message: 'Must be a valid year' })
       .positive({ message: 'Must be a valid year' })
       .max(new Date().getFullYear(), { message: 'Must be in the past' })
   })

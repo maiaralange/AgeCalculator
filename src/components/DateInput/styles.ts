@@ -41,6 +41,12 @@ export const Input = styled.input`
     outline: none;
     border-color: var(--purple);
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 
 export const ErrorMessage = styled.p`
@@ -48,4 +54,8 @@ export const ErrorMessage = styled.p`
   color: var(--red);
   font-style: italic;
   font-size: 0.75rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.5rem;
+  }
 `;

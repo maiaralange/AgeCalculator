@@ -1,14 +1,14 @@
 import { useAge } from '../../context/useAge';
-import { Display } from '../Display';
+import { DateDisplay } from '../DateDisplay';
 import { Container } from './styles';
 
 export function Content() {
   const { age } = useAge();
   return (
     <Container>
-      <Display value={age.year} title="years" />
-      <Display value={age.month} title="months" />
-      <Display value={age.day} title="days" />
+      <DateDisplay value={age.year} title="years" />
+      <DateDisplay value={age.month} title="months" />
+      <DateDisplay value={age.day} title="days" />
     </Container>
   );
 }

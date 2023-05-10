@@ -5,7 +5,7 @@ interface DisplayProps {
   value: string;
 }
 
-export function Display({ title, value }: DisplayProps) {
+export function DateDisplay({ title, value }: DisplayProps) {
   return (
     <Container>
       <ColoredTitle>{value}</ColoredTitle>
