@@ -1,14 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import dayjs from 'dayjs';
-import * as isLeapYear from 'dayjs/plugin/isLeapYear';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { daysPerMonth, useAge } from '../../context/useAge';
 import { DateInput } from '../DateInput';
 import { Container, Form, Line, Submit, SubmitButton } from './styles';
 import submitImg from '/assets/icon-arrow.svg';
-
-dayjs.extend(isLeapYear);
 
 export enum DateType {
   Day,
@@ -61,8 +58,9 @@ const isValidDate = (date: FormInput) => {
 };
 
 const isFebruaryAndLeapYear = (date: FormInput) => {
-  const birthday = dayjs(`${date.year}-${date.month}-01`);
-  return date.month == 2 && birthday.isLeapYear();
+  const isLeapYear = (year: number) =>
+    (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+  return date.month == 2 && isLeapYear(date.year);
 };
 
 export function Header() {
