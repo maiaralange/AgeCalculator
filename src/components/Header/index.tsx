@@ -3,10 +3,10 @@ import dayjs from 'dayjs';
 import * as isLeapYear from 'dayjs/plugin/isLeapYear';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import submitImg from '../../assets/icon-arrow.svg';
 import { daysPerMonth, useAge } from '../../context/useAge';
 import { DateInput } from '../DateInput';
 import { Container, Form, Line, Submit, SubmitButton } from './styles';
+import submitImg from '/assets/icon-arrow.svg';
 
 dayjs.extend(isLeapYear);
 
